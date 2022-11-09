@@ -21,7 +21,19 @@ namespace Ovning3
         }
 
 
-        private string fname;  
+        private string fname;
+        public string Fname
+        {
+            get => fname;
+            set
+            {
+                if (fname.Length>2 && fname.Length<10)
+                {
+                    fname = value;
+                }
+            }
+        }
+
         private string lname;
         private int height;
         private int weight;
