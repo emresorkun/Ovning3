@@ -6,19 +6,33 @@ using System.Threading.Tasks;
 
 namespace Ovning3
 {
-    class Person
+    public class Person
     {
         private int age;
         public int Age
         {
             get => age;
             set {
-                if (age>0)
+                if (value > 0)
                 {
                     age=value;
                 }
+                else
+                {
+                    throw new ArgumentException("Age must be something else");
+                }
             }
         }
+        //        {
+        //            get
+        //            {if (age>0)
+        //                {
+        //                    age=value;
+        //                }} 
+        //            set {
+        //                
+        //}
+        //        }
 
 
         private string fname;
@@ -27,7 +41,7 @@ namespace Ovning3
             get => fname;
             set
             {
-                if (fname.Length>2 && fname.Length<10)
+                if (value.Length>2 && value.Length<10)
                 {
                     fname = value;
                 }
@@ -35,26 +49,22 @@ namespace Ovning3
         }
 
         private string lname;
+        public string Lname
+        {
+            get => lname;
+            set
+            {
+                if (value.Length > 3 && value.Length < 15)
+                {
+                    lname = value;
+                }
+            }
+        }
+
+
         private int height;
         private int weight;
 
-        public string SetName()
-        {
-            //fname is obligatory and at least 2 and no more then 10
-            return fname;  
-        }
-
-        //public string SetAge()
-        //{
-        //    //age should be more then 0
-        //    return age;
-        //}
-
-        //public string lname()
-        //{
-        //    //lname is obligatory and at least 3 and no more then 15
-        //    return lname;
-        //}
 
         
     }
