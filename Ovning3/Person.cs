@@ -19,36 +19,29 @@ namespace Ovning3
                 }
                 else
                 {
-                    throw new ArgumentException("Age must be something else");
+                    throw new ArgumentException("Age cannot be smaller than 0");
                 }
             }
         }
-        //        {
-        //            get
-        //            {if (age>0)
-        //                {
-        //                    age=value;
-        //                }} 
-        //            set {
-        //                
-        //}
-        //        }
 
 
-        private string fname;
+        private string fname = string.Empty;
         public string Fname
         {
             get => fname;
-            set
-            {
+            set{
                 if (value.Length>2 && value.Length<10)
                 {
                     fname = value;
                 }
+                else
+                {
+                    throw new ArgumentException("First Name can not be shorter than 2 letters or should be shorter than 10");
+                }
             }
         }
 
-        private string lname;
+        private string lname = String.Empty;
         public string Lname
         {
             get => lname;
@@ -61,9 +54,27 @@ namespace Ovning3
             }
         }
 
+        private double height;
+        public double Height
+        {
+            get => height;
+            set
+            {
+                height = value;
+            }
+        }
+        private double weight;
+        public double Weight { get; set; }
 
-        private int height;
-        private int weight;
+        public Person(int age, string fname, string lname, double height, double weight)
+        {
+           Age = age;
+           Fname = fname;
+           Lname = lname;
+           Height = height;
+           Weight = weight;
+        }  
+           
 
 
         
