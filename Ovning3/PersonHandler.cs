@@ -16,8 +16,6 @@ namespace Ovning3
            
             //age = int.Parse(Console.ReadLine());
             person.Age = age;
-            Console.WriteLine($"user says {person.Age}");
-
 
         }
 
@@ -51,15 +49,9 @@ namespace Ovning3
         public Person CreatePerson(int age, string fname, string lname, double height, double weight)//add properties as input arguments
         {
             var newPerson = new Person(age, fname, lname, height, weight);
-            //SetAge(newPerson, age);
-            //newPerson.Age = age;
-            //newPerson.Fname= fname;
-            //newPerson.Lname= lname;
-            //newPerson.Height = height;
-            ////give newPerson all properties
-            //Console.WriteLine(age);
-            //Console.Read();
             return newPerson;
         }
+
+
     }
 }

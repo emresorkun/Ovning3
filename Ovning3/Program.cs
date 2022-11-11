@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-         
-            
+
+            //UserError userError = new UserError();
             
             //ARGUMENT EXCEPTION
             //Ask user for inputs - Not nessasary
@@ -29,6 +29,8 @@
                 Console.WriteLine(e.Message);
                 //throw;
             }
+
+            
 
         }
     }
