@@ -1,12 +1,24 @@
-﻿namespace Ovning3
+﻿using System.Collections.Generic;
+
+namespace Ovning3
 {
     internal class Program
     {
+        
         static void Main(string[] args)
         {
 
+
+
+            //ASK HOW TO THE THE LIST!!
+
+            //List<UserError> list1 = new List<UserError>();
+            //list1.Add();
+            //list1.Add();
+            //list1.Add();
+
             //UserError userError = new UserError();
-            
+
             //ARGUMENT EXCEPTION
             //Ask user for inputs - Not nessasary
 
@@ -33,5 +45,7 @@
             
 
         }
+
+        
     }
 }
