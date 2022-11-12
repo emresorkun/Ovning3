@@ -37,6 +37,16 @@ namespace Ovning3
         {
             get { return age; }
             set { age = value; }
+     
         }
+
+        public Animal(String name, Double weight, int age)
+        {
+            Name = name;
+            Weight = weight;
+            Age = age;
+        }
+
+        public abstract void DoSound();
     }
 }
