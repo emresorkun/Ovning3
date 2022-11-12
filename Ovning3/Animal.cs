@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace Ovning3
 {
+    
     abstract class Animal
     {
         private string name;
@@ -39,7 +40,7 @@ namespace Ovning3
             set { age = value; }
      
         }
-
+        //KONSTRUKTOR
         public Animal(String name, Double weight, int age)
         {
             Name = name;
@@ -48,5 +49,43 @@ namespace Ovning3
         }
 
         public abstract void DoSound();
+
+        public class Horse : Animal
+        {
+            public Horse(string name, double weight, int age) : base(name, weight, age)
+            {
+            }
+
+            public override void DoSound()
+            {
+                Console.WriteLine("Horse goes horsesound");
+            }
+        }
+        public class Dog : Animal
+        {
+            public Dog(string name, double weight, int age) : base(name, weight, age)
+            {
+            }
+
+            public override void DoSound()
+            {
+                Console.WriteLine("Horse goes dogsound");
+            }
+        }
+        public class Hedgehog : Animal
+        {
+            public Hedgehog(string name, double weight, int age) : base(name, weight, age)
+            {
+                
+            }
+
+            public override void DoSound()
+            {
+                Console.WriteLine("Horse goes hedgesound");
+            }
+        }
+
+        //WORM BIRD AND WOLF WILL BE ADDED 
+
     }
 }

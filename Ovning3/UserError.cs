@@ -8,10 +8,11 @@ namespace Ovning3
 {
 
     abstract class UserError
+
     {
 
+        //public abstract void UEMessage(string message);
         public abstract void UEMessage(string message);
-
     }
 
 

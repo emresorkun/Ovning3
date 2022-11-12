@@ -42,10 +42,12 @@ namespace Ovning3
                 //throw;
             }
 
-            
+           
 
         }
 
+        Animal.Dog berry=new Animal.Dog("soberry", 12, 12 );
         
     }
+
 }
