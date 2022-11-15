@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 
+
 namespace Ovning3
+
 {
     internal class Program
     {
@@ -8,7 +10,14 @@ namespace Ovning3
         static void Main(string[] args)
         {
 
-
+            Animal.Dog emre = new Animal.Dog("e", 1, 1);
+            emre.Name = "eee";
+            emre.DoSound();
+            Console.WriteLine(emre.Name);
+            Animal.Wolf kurt = new Animal.Wolf("1", 1, 1);
+            Console.WriteLine(kurt.Age);
+            // CANT REACH WOLF?? 
+            //Wolf emre = new Wolf("ad", 12, 12);
 
             //ASK HOW TO THE THE LIST!!
 
@@ -46,8 +55,7 @@ namespace Ovning3
 
         }
 
-        Animal.Dog berry=new Animal.Dog("soberry", 12, 12 );
-        
+
     }
 
 }

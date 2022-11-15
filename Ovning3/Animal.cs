@@ -7,8 +7,10 @@ using System.Xml.Linq;
 
 namespace Ovning3
 {
-    
-    abstract class Animal
+
+
+    //stract class Animal
+    public abstract class Animal
     {
         private string name;
         public string Name
@@ -38,7 +40,7 @@ namespace Ovning3
         {
             get { return age; }
             set { age = value; }
-     
+
         }
         //KONSTRUKTOR
         public Animal(String name, Double weight, int age)
@@ -50,42 +52,58 @@ namespace Ovning3
 
         public abstract void DoSound();
 
-        public class Horse : Animal
-        {
-            public Horse(string name, double weight, int age) : base(name, weight, age)
-            {
-            }
-
-            public override void DoSound()
-            {
-                Console.WriteLine("Horse goes horsesound");
-            }
-        }
-        public class Dog : Animal
-        {
-            public Dog(string name, double weight, int age) : base(name, weight, age)
-            {
-            }
-
-            public override void DoSound()
-            {
-                Console.WriteLine("Horse goes dogsound");
-            }
-        }
-        public class Hedgehog : Animal
-        {
-            public Hedgehog(string name, double weight, int age) : base(name, weight, age)
-            {
-                
-            }
-
-            public override void DoSound()
-            {
-                Console.WriteLine("Horse goes hedgesound");
-            }
-        }
-
-        //WORM BIRD AND WOLF WILL BE ADDED 
+        
 
     }
+
+    public class Horse : Animal
+    {
+        public Horse(string name, double weight, int age) : base(name, weight, age)
+        {
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("Horse does horsesound");
+        }
+    }
+    public class Dog : Animal
+    {
+        public Dog(string name, double weight, int age) : base(name, weight, age)
+        {
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("Dog does dogsound");
+        }
+    }
+    public class Hedgehog : Animal
+    {
+        public Hedgehog(string name, double weight, int age) : base(name, weight, age)
+        {
+
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("Hedgehog does hedgesound");
+        }
+    }
+
+    public class Wolf : Animal
+    {
+        public Wolf(string name, double weight, int age) : base(name, weight, age)
+        {
+        }
+
+        public override void DoSound()
+        {
+            Console.WriteLine("Wolf does wolfffff wolfff");
+        }
+    }
+
+
+
+    //WORM BIRD AND WOLF WILL BE ADDED 
 }
