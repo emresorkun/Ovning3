@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
+ 
 namespace Ovning3
 {
 
@@ -50,7 +50,12 @@ namespace Ovning3
             Age = age;
         }
 
-        public abstract void DoSound();
+        public abstract string DoSound();
+
+        public virtual string Stats()
+        {
+            return $"name: {name}, age:{age} weight: {Weight}";
+        }
 
         
 
@@ -58,24 +63,41 @@ namespace Ovning3
 
     public class Horse : Animal
     {
-        public Horse(string name, double weight, int age) : base(name, weight, age)
+        public string Breed { get; set; }   
+        public Horse(string name, double weight, int age, string breed) : base(name, weight, age)
         {
+            Breed = breed;
         }
 
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Horse does horsesound");
+            return "Horse does horsesound";
+        }
+
+        public override string Stats()
+        {
+            return base.Stats()+$" Breed: {Breed}";
         }
     }
+
+
     public class Dog : Animal
-    {
-        public Dog(string name, double weight, int age) : base(name, weight, age)
+      {
+        public bool IsGoodBoy { get; set; }
+        public Dog(string name, double weight, int age, bool isGoodBoy) : base(name, weight, age)
         {
+            IsGoodBoy = isGoodBoy;
         }
 
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Dog does dogsound");
+            
+            return "Dog does dogsound";
+        }
+
+        public override string Stats()
+        {
+            return base.Stats()+$" Is a good boy: {IsGoodBoy} ";
         }
     }
     public class Hedgehog : Animal
@@ -85,9 +107,9 @@ namespace Ovning3
 
         }
 
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Hedgehog does hedgesound");
+            return "Hedgehog does hedgesound";
         }
     }
 
@@ -97,9 +119,9 @@ namespace Ovning3
         {
         }
 
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Wolf does wolfffff wolfff");
+            return "Wolf does wolfffff wolfff";
         }
     }
 
@@ -107,3 +129,4 @@ namespace Ovning3
 
     //WORM BIRD AND WOLF WILL BE ADDED 
 }
+

@@ -48,7 +48,7 @@ namespace Ovning3
             set
             {
                 if (value.Length > 3 && value.Length < 15)
-                {
+                {  
                     lname = value;
                 }
             }
@@ -80,3 +80,4 @@ namespace Ovning3
         
     }
 }
+

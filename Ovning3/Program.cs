@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-
+using System.Net.Http.Headers;
+//using static Ovning3.Animal;
 
 namespace Ovning3
 
@@ -10,31 +11,15 @@ namespace Ovning3
         static void Main(string[] args)
         {
 
-            Animal.Dog emre = new Animal.Dog("e", 1, 1);
-            emre.Name = "eee";
-            emre.DoSound();
-            Console.WriteLine(emre.Name);
-            Animal.Wolf kurt = new Animal.Wolf("1", 1, 1);
-            Console.WriteLine(kurt.Age);
-            // CANT REACH WOLF?? 
-            //Wolf emre = new Wolf("ad", 12, 12);
 
-            //ASK HOW TO THE THE LIST!!
+            List<UserError> list1 = new List<UserError>();
 
-            //List<UserError> list1 = new List<UserError>();
-            //list1.Add();
-            //list1.Add();
-            //list1.Add();
-
-            //UserError userError = new UserError();
-
-            //ARGUMENT EXCEPTION
-            //Ask user for inputs - Not nessasary
 
             var ph = new PersonHandler();
             //Person person1 = ph.CreatePerson(23, "Kalle", "Anka", 23, 70);
 
-            Person person2 = ph.CreatePerson(43, "emre", "sorkun", 43,80);
+            Person person2 = new PersonHandler().CreatePerson(43, "emre", "sorkun", 43,80);
+            
 
             try
             {
@@ -48,11 +33,30 @@ namespace Ovning3
             catch (ArgumentException e)
             {
                 Console.WriteLine(e.Message);
-                //throw;
+                //throw; 
             }
 
-           
 
+            var animalFarm = new List<Animal>();
+            animalFarm.Add(new Horse("frutti", 234,23,"tantuni"));
+
+            var horse = new Horse("tuti", 250, 12, "taskesen");
+            animalFarm.Add(horse);
+            animalFarm[0].DoSound();
+            animalFarm.Add(new Dog("karabas", 19, 12, false));
+
+
+            Console.WriteLine(horse.DoSound());
+            Console.WriteLine($"{animalFarm[0].Name}  does häst sound ");
+            Console.WriteLine($"{animalFarm[1].Name}  does häst sound ");
+            
+            
+            foreach (var animal in animalFarm)
+            {
+                Console.WriteLine(animal.Stats(), horse.Breed);
+              
+                Console.WriteLine(animal.DoSound()+"animal does the sound"); 
+            }
         }
 
 
