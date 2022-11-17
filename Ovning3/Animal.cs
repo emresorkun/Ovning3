@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -101,31 +102,118 @@ namespace Ovning3
         }
     }
     public class Hedgehog : Animal
-    {
-        public Hedgehog(string name, double weight, int age) : base(name, weight, age)
-        {
 
+    {
+        public bool IsSpicky { get; set; }
+        public Hedgehog(string name, double weight, int age, bool isSpicky) : base(name, weight, age)
+        {
+            IsSpicky= isSpicky;
         }
 
         public override string DoSound()
         {
             return "Hedgehog does hedgesound";
         }
+        public override string Stats()
+        {
+            return base.Stats() + $" Is s/he spicky: {IsSpicky} ";
+        }
     }
 
     public class Wolf : Animal
     {
-        public Wolf(string name, double weight, int age) : base(name, weight, age)
+        public int PackPopulation { get; set; }
+        public Wolf(string name, double weight, int age, int packPopulation) : base(name, weight, age)
         {
+            PackPopulation = packPopulation;
         }
 
         public override string DoSound()
         {
             return "Wolf does wolfffff wolfff";
         }
+        public override string Stats()
+        {
+            return base.Stats() + $" A member  of a pack of: {PackPopulation} ";
+        }
     }
 
+    public class Bird : Animal
+    {
 
+        public double WingLength { get; set; }
+        public Bird(string name, double weight, int age, double wingLength) : base(name, weight, age)
+        {
+            WingLength = wingLength;
+        }
+
+        public override string DoSound()
+        {
+            return "bird says cick";
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $" has a wing length of. {WingLength} ";
+        }
+    }
+
+    public class WolfMan: Animal
+
+    {
+        public bool Ishesafe { get; set; }
+        public WolfMan(string name, double weight, int age, bool isheSafe) : base(name, weight, age)
+        {
+            Ishesafe = isheSafe;
+        }
+
+        public bool Fullmoon { get; set; } = true;
+        
+        public override string DoSound()
+        {
+            return "WOLFI WOLFUUUUU";
+        }
+
+        public override string Stats()
+        {
+            if (Fullmoon)
+            {
+                Ishesafe = false;
+
+                return $"oh my god {base.Stats()} RUN!";
+            }
+            else
+            {
+                Ishesafe = true;
+                return $"HE IS A GOOD BOY {base.Stats()} UNRUN!";
+            }
+
+            
+        }
+
+    }
+
+    public class Pelican : Bird
+    {
+        private object allergies;
+
+        public List<string> Allergies { get; set; }
+        public Pelican(string name, double weight, int age, double wingLength, List<string> allergies) : base(name, weight, age, wingLength)
+        {
+            Allergies = allergies;
+        }
+        public override string Stats()
+        {
+            var sb = new StringBuilder();
+
+            foreach(var allergy in Allergies)
+            {
+                sb.Append($"{allergy},");
+            }
+
+            return $"{base.Stats()}, Allergies: {sb.ToString()}";
+            //byga a string of a list and look and create a 
+        }
+    }
 
     //WORM BIRD AND WOLF WILL BE ADDED 
 }

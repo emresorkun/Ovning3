@@ -43,18 +43,36 @@ namespace Ovning3
             var horse = new Horse("tuti", 250, 12, "taskesen");
             animalFarm.Add(horse);
             animalFarm[0].DoSound();
-            animalFarm.Add(new Dog("karabas", 19, 12, false));
+            animalFarm.Add(new Dog("karabas", 19, 12, false)) ;
+            animalFarm.Add(new WolfMan("HANNIBAL", 12, 45, false));
+            List<string> allergies = new List<string>();
+            allergies.Add("eee");
+            allergies.Add("bee");
+            allergies.Add("cee");
+            Console.WriteLine("Allergies "+allergies[2]);
+            animalFarm.Add(new Pelican("TEST", 111, 1234, 12345, allergies));
+
+            //animalFarm.Add(new Wolf("kurt", 12, 12));
+            //HOW TO REACH KURT WHEN WE CREATED AND ADDED TO THE LIST? WE ARE NOT PLACING IT IN  A VAR?
+            //var wolf1 = new Wolf("kurti", 12, 12);
+            //animalFarm.Add(wolf1);
+            //FOR EXAMPLE HERE WE HAVE A wolf1 variable...
+            //Console.WriteLine(animalFarm[0]+" List 0");
 
 
-            Console.WriteLine(horse.DoSound());
-            Console.WriteLine($"{animalFarm[0].Name}  does häst sound ");
-            Console.WriteLine($"{animalFarm[1].Name}  does häst sound ");
+
+
+            //Console.WriteLine(horse.DoSound());
+            //Console.WriteLine($"{animalFarm[0].Name}  does häst sound ");
+            //Console.WriteLine($"{animalFarm[1].Name}  does häst sound ");
             
             
             foreach (var animal in animalFarm)
             {
                 Console.WriteLine(animal.Stats(), horse.Breed);
-              
+
+            
+
                 Console.WriteLine(animal.DoSound()+"animal does the sound"); 
             }
         }
